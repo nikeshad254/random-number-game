@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lottery Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- if input-active class is present then you can see input area -->
+    <!-- if display-active class is present then you can see input area -->
+    <div class="input-display-area input-active">
+        <div class="input-area">
+            <input type="text" id="name" autocomplete="off">
+            <button onclick="addInputName()">Submit Name</button>
+        </div>
+
+        <div class="display-area">
+            <h3 id="Rollname">Nikesh Adhikari</h3>
+            <p id="Rollnum">10</p>
+        </div>
+    </div>
+
+    <div class="list-area">
+        <h3>List of enrollers <a href="./results.html">result</a></h3>
+        <ul id="lists">
+            <!-- <li><p>12</p><p>Nikesh</p><span>remove</span></li> -->
+
+        </ul>
+    </div>
+
+    <a class="gitbtn BUTTONS" href="https://github.com/nikeshad254">GitHub</a>
+    
+    <script src="./core.js"></script>
+</body>
+</html>
