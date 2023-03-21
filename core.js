@@ -28,7 +28,9 @@ function retrieveLocal() {
   personsData = JSON.parse(storedData);
 
   //update count from local
-  totalPersons = Object.keys(personsData).length;
+  if(personsData){
+    totalPersons = Object.keys(personsData).length;
+  }
 
   updateList();
 }
