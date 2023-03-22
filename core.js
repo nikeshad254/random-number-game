@@ -1,7 +1,3 @@
-// holds data from local palce web not storage
-const persons = {
-  //   person5: { id: 5, name: "Mark Davis" },
-};
 
 // holds data from local storage
 var personsData = {};
@@ -28,9 +24,7 @@ function retrieveLocal() {
   personsData = JSON.parse(storedData);
 
   //update count from local
-  if(personsData){
-    totalPersons = Object.keys(personsData).length;
-  }
+  totalPersons = Object.keys(personsData).length;
 
   updateList();
 }
@@ -41,7 +35,6 @@ function updateList() {
     // if (personsData[key].id === num) {
     //   return true;
     // }
-    console.log(key)
     nameList.innerHTML += `<li>
                                 <p>${personsData[key].id}</p>
                                 <p>${personsData[key].name}</p>
@@ -64,7 +57,6 @@ homeInputName.addEventListener("keydown", (e)=>{
 
 function addInputName() {
   if (homeInputName.value.length > 0) {
-    console.log(inputDisplayArea);
     inputDisplayArea.classList.remove("input-active");
     inputDisplayArea.classList.add("display-active");
 
@@ -73,19 +65,16 @@ function addInputName() {
 
     let interval = setInterval(() => {
       random = Math.floor(Math.random() * 100);
-      console.log(random);
       Rollnum.textContent = random;
     }, 150);
 
     setTimeout(() => {
       clearInterval(interval);
       let id = condtnRandomizer(random, 100);
-      console.log(id);
       
       Rollnum.textContent = id;
       personsData[totalPersons + 1] = { id: id, name: homeInputName.value };
 
-      console.log(personsData[totalPersons + 1])
       updateLocal();
 
       setTimeout(() => {
